@@ -97,9 +97,7 @@ class GestorPaises:
     def borrar_pais(self, nombre):
         clave = nombre.lower().strip()
         if clave in self.paises:
-            # Elimina el pais del diccionario en memoria
             del self.paises[clave]
-            # Guarda los cambios automaticamente en el archivo CSV
             self.guardar_en_csv()
             print("Pais eliminado con exito.")
             return True
@@ -200,7 +198,7 @@ class GestorPaises:
             else:
                 conteo_continentes[p.continente] = 1
 
-        print("\n--- ESTADISTICAS DEL DATASET ---")
+        print("--- ESTADISTICAS DEL DATASET ---")
         print(
             f"Pais con mayor poblacion: {pais_max_pob.nombre} ({pais_max_pob.poblacion} hab.)"
         )
@@ -209,7 +207,7 @@ class GestorPaises:
         )
         print(f"Promedio de poblacion general: {promedio_pob:.2f}")
         print(f"Promedio de superficie general: {promedio_sup:.2f}")
-        print("\nPaises por continente:")
+        print("Paises por continente:")
         for cont, cant in conteo_continentes.items():
             print(f" - {cont}: {cant}")
-        print("--------------------------------")
+        print("-------------------")
