@@ -35,7 +35,7 @@ def mostrar_en_consola(lista):
     if not lista:
         print("Sin resultados para mostrar.")
         return
-    print("\nNombre               | Continente      | Poblacion       | Superficie")
+    print("Nombre               | Continente      | Poblacion       | Superficie")
     print("-" * 75)
     for p in lista:
         print(
@@ -58,25 +58,25 @@ def menu():
         8. Borrar un pais
         9. Salir del programa""")
 
-        op = input("Seleccione una opcion (1-9): ").strip()
+        op = input("Elija una opcion (1-9): ").strip()
 
         if op == "1":
             mostrar_en_consola(list(gestor.paises.values()))
 
         elif op == "2":
             print("-- Carga de nuevo pais --")
-            n = leer_texto("Nombre: ")
-            c = leer_texto("Continente: ")
-            p = leer_entero("Cantidad de habitantes: ")
-            s = leer_float("Superficie en km2: ")
-            gestor.agregar_pais(n, c, p, s)
+            nom = leer_texto("Nombre: ")
+            con = leer_texto("Continente: ")
+            pob = leer_entero("Cantidad de habitantes: ")
+            sup = leer_float("Superficie en km2: ")
+            gestor.agregar_pais(nom, con, pob, sup)
 
         elif op == "3":
             print("-- Modificar datos --")
-            n = leer_texto("Nombre del pais a buscar: ")
-            p = leer_entero("Nueva poblacion: ")
-            s = leer_float("Nueva superficie: ")
-            gestor.actualizar_datos(n, p, s)
+            nom = leer_texto("Nombre del pais a buscar: ")
+            pob = leer_entero("Nueva poblacion: ")
+            sup = leer_float("Nueva superficie: ")
+            gestor.actualizar_datos(nom, pob, sup)
 
         elif op == "4":
             print("-- Busqueda exacta o parcial --")
@@ -85,10 +85,10 @@ def menu():
             mostrar_en_consola(res)
 
         elif op == "5":
-            print("-- Menu de filtros --")
-            print("1. Por Continente")
-            print("2. Por rango de Poblacion")
-            print("3. Por rango de Superficie")
+            print("""-- Menu de filtros --
+            1. Por Continente
+            2. Por rango de Poblacion
+            3. Por rango de Superficie""")
             tipo = input("Opcion: ").strip()
 
             if tipo == "1":
@@ -110,7 +110,7 @@ def menu():
                 print("Opcion de filtrado invalida.")
 
         elif op == "6":
-            print("\n-- Menu de ordenamiento --")
+            print("-- Menu de ordenamiento --")
             crit = leer_texto(
                 "Criterio (nombre / poblacion / superficie): "
             ).lower()
@@ -127,8 +127,8 @@ def menu():
 
         elif op == "8":
             print("-- Eliminar un pais --")
-            n = leer_texto("Nombre del pais a borrar: ")
-            gestor.borrar_pais(n)
+            nom = leer_texto("Nombre del pais a borrar: ")
+            gestor.borrar_pais(nom)
 
         elif op == "9":
             print("Saliendo del sistema...")
