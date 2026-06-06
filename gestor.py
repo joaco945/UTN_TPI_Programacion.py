@@ -91,7 +91,7 @@ class GestorPaises:
             return False
         self.paises[clave] = nuevo_pais
         self.guardar_en_csv()
-        print("Pais registrado con exito.")
+        print("Pais fue registrado con exito.")
         return True
     
     def borrar_pais(self, nombre):
@@ -99,10 +99,10 @@ class GestorPaises:
         if clave in self.paises:
             del self.paises[clave]
             self.guardar_en_csv()
-            print("Pais eliminado con exito.")
+            print("El pais fue eliminado con exito.")
             return True
         else:
-            print("Pais no encontrado.")
+            print("El pais no fue encontrado.")
             return False
 
 
@@ -200,10 +200,10 @@ class GestorPaises:
 
         print("--- ESTADISTICAS DEL DATASET ---")
         print(
-            f"Pais con mayor poblacion: {pais_max_pob.nombre} ({pais_max_pob.poblacion} hab.)"
+            f"El pais con mayor poblacion es: {pais_max_pob.nombre} ({pais_max_pob.poblacion} hab.)"
         )
         print(
-            f"Pais con menor poblacion: {pais_min_pob.nombre} ({pais_min_pob.poblacion} hab.)"
+            f"El pais con menor poblacion es: {pais_min_pob.nombre} ({pais_min_pob.poblacion} hab.)"
         )
         print(f"Promedio de poblacion general: {promedio_pob:.2f}")
         print(f"Promedio de superficie general: {promedio_sup:.2f}")
