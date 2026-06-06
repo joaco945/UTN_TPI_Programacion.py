@@ -28,7 +28,7 @@ def leer_texto(mensaje):
         t = input(mensaje).strip()
         if t:
             return t
-        print("El campo no puede quedar vacio.")
+        print("El campo no puede estar vacio.")
 
 
 def mostrar_en_consola(lista):
@@ -64,7 +64,7 @@ def menu():
             mostrar_en_consola(list(gestor.paises.values()))
 
         elif op == "2":
-            print("-- Carga de nuevo pais --")
+            print("-- Carga del nuevo pais --")
             nom = leer_texto("Nombre: ")
             con = leer_texto("Continente: ")
             pob = leer_entero("Cantidad de habitantes: ")
@@ -107,7 +107,7 @@ def menu():
                     gestor.filtrar_paises(sup_min=s_min, sup_max=s_max)
                 )
             else:
-                print("Opcion de filtrado invalida.")
+                print("Opcion de filtrado no valida.")
 
         elif op == "6":
             print("-- Menu de ordenamiento --")
@@ -115,7 +115,7 @@ def menu():
                 "Criterio (nombre / poblacion / superficie): "
             ).lower()
             sentido = (
-                input("¿Desea orden descendente? (S/N): ").strip().lower()
+                input("¿Quiere ordenar de forma descendente? (S/N): ").strip().lower()
             )
             desc = True if sentido == "s" else False
 
@@ -127,14 +127,14 @@ def menu():
 
         elif op == "8":
             print("-- Eliminar un pais --")
-            nom = leer_texto("Nombre del pais a borrar: ")
+            nom = leer_texto("Nombre del pais que quiere eliminar: ")
             gestor.borrar_pais(nom)
 
         elif op == "9":
             print("Saliendo del sistema...")
             break
         else:
-            print("Opcion invalida, reintente.")
+            print("Opcion no valida, reintente por favor.")
 
 
 if __name__ == "__main__":
