@@ -36,7 +36,7 @@ def mostrar_en_consola(lista):
         print("Sin resultados para mostrar.")
         return
     print("Nombre               | Continente      | Poblacion       | Superficie")
-    print("-" * 75)
+    print("----------------------------------------------------------------------")
     for p in lista:
         print(
             f"{p.nombre:<20} | {p.continente:<15} | {p.poblacion:<15} | {p.superficie:<15}"
